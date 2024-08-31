@@ -1,0 +1,14 @@
+{
+  "name": "guther",
+  "version": "1.0.1",
+  "description": "A simple JSON file database managemnt system",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bismark Yamoah",
+  "license": "MIT"
+}

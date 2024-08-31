@@ -7,7 +7,10 @@ const { set_db_path } = require('./lib/_global');
  let db_path_set = false;
  let guther = {
     update:update, get:get,
-    insert: async({id,data})=>{
+    /**
+     * @param {{data: {[k:string]:any}, id: string}} param0
+     */
+    async insert({id,data}){
       let ex= null;
      try {
       ex = await get({id});
@@ -18,11 +21,14 @@ const { set_db_path } = require('./lib/_global');
      throw new Error('Not inserted');
     }, 
     remove:remove,
-    set_dir(dir){
-       if(!db_path_set&&typeof dir!=='string') return;
-       set_db_path(dir);
+    /**
+     * Set the directory for storing data
+     * @param {string} dir
+     */
+    set_db_dirictory(dir){
+       if(db_path_set||typeof dir!=='string') return;
+       set_db_path(dir, true);
        db_path_set = true;
     }
 };
- guther = Object.create(guther);
- module.exports = guther;
+ module.exports = Object.create(guther);
