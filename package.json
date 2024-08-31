@@ -2,7 +2,7 @@
   "name": "guther",
   "version": "1.0.1",
   "description": "A simple JSON file database managemnt system",
-  "main": "lib/index.js",
+  "main": "index.js",
   "directories": {
     "lib": "lib"
   },
